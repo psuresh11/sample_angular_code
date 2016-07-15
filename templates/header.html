@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">{{username}}</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{ active: isActive('/aboutme') }"><a href="#/aboutme">Me</a>
+                </li>
+                <li ng-class="{ active: isActive('/interest') }"><a href="#/interest">Interest</a>
+                </li>
+                <li ng-class="{ active: isActive('/contact') }"><a href="#/contact">Contact</a>
+                </li>
+                <li class="dropdown" ng-class="{ active: isActive('/blog') || isActive('/blog/post') }">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ng-class="{ active: isActive('/blog')}"><a href="#/blog">List of Posts</a>
+                        </li>
+                        <li ng-class="{ active: isActive('/blog/post')}"><a href="#/blog/post">View One Post</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
